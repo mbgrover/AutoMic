@@ -79,41 +79,41 @@ for row in micCommands:
         print(entry, end=", ")
     print()
 
-import tkinter as tk
-from tkinter import ttk
-from tkinter import * 
+# import tkinter as tk
+# from tkinter import ttk
+# from tkinter import * 
 
 
 
 
-# Graphical bullshit begins here
-root = Tk()
+# # Graphical bullshit begins here
+# root = Tk()
 
-# This is the section of code which creates the main window
-root.geometry('1000x600')
-root.configure(background='#F0FFFF')
-root.title('Mic Control')
-
-
-
-# This is a function which increases the progress bar value by the given increment amount
-def makeProgress():
-    progessBarOne['value']=progessBarOne['value']+1
-    root.update_idletasks()
-
-# This is the section of code which creates a color style to be used with the progress bar
-progessBarOne_style = ttk.Style()
-progessBarOne_style.theme_use('clam')
-progessBarOne_style.configure('progessBarOne.Horizontal.TProgressbar', foreground='#F0F8FF', background='#F0F8FF')
-
-
-# This is the section of code which creates a progress bar
-progessBarOne=ttk.Progressbar(root, style='progessBarOne.Horizontal.TProgressbar', orient='horizontal', length=376, mode='determinate', maximum=100, value=0)
-progessBarOne.place(x=372, y=33)
-
-# This is the section of code which creates a button
-Button(root, text='Next Page', bg='#F0F8FF', font=('arial', 12, 'normal'), command=makeProgress).place(x=341, y=351)
+# # This is the section of code which creates the main window
+# root.geometry('1000x600')
+# root.configure(background='#F0FFFF')
+# root.title('Mic Control')
 
 
 
-root.mainloop()
+# # This is a function which increases the progress bar value by the given increment amount
+# def makeProgress():
+#     progessBarOne['value']=progessBarOne['value']+1
+#     root.update_idletasks()
+
+# # This is the section of code which creates a color style to be used with the progress bar
+# progessBarOne_style = ttk.Style()
+# progessBarOne_style.theme_use('clam')
+# progessBarOne_style.configure('progessBarOne.Horizontal.TProgressbar', foreground='#F0F8FF', background='#F0F8FF')
+
+
+# # This is the section of code which creates a progress bar
+# progessBarOne=ttk.Progressbar(root, style='progessBarOne.Horizontal.TProgressbar', orient='horizontal', length=376, mode='determinate', maximum=100, value=0)
+# progessBarOne.place(x=372, y=33)
+
+# # This is the section of code which creates a button
+# Button(root, text='Next Page', bg='#F0F8FF', font=('arial', 12, 'normal'), command=makeProgress).place(x=341, y=351)
+
+
+
+# root.mainloop()
