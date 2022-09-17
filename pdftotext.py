@@ -17,8 +17,14 @@ characterList.append("NAN")
 characterList.append("MILES")
 characterList.append("RASHAAD")
 
+# 2D list for commands: bool[][] commands = [page][character]
+micCommands = []
+
 # for each page in the pdf
 for i in range(pdfReader.numPages):
+    commandRow= [] # new page -> new row of commands, each col is a mic
+    for x in range(len(characterList)):
+        commandRow.append(0);
     # create a list of all of the words on that page
     pageObj = pdfReader.getPage(i)
     words = pageObj.extract_text()
@@ -35,7 +41,16 @@ for i in range(pdfReader.numPages):
         for k in pageCharacterList: # compare each word with each character
             if k in j: # if the word is a character in the list
                 print(k)    # print the character name
+                commandRow[characterList.index(k)] = 1
                 pageCharacterList.remove(k)   # remove the name from the shallow list copy
+    micCommands.append(commandRow)
 
 # closing the pdf file object
 pdfFileObj.close()
+print()
+print()
+
+for row in micCommands:
+    for entry in row:
+        print(entry, end=" ")
+    print()
