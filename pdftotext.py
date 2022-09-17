@@ -9,10 +9,28 @@ pdfFileObj = open('file.pdf', 'rb')
  
 # create a pdf reader object
 pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+
+characterList = []
+characterList.append("LORIN")
+characterList.append("NAN")
+characterList.append("MILES")
+characterList.append("RASHAAD")
  
 for i in range(pdfReader.numPages):
     pageObj = pdfReader.getPage(i)
-    print(pageObj.extractText())
- 
+    words = pageObj.extract_text()
+    words = words.split(' ');
+    print()
+    print()
+    print(i)
+    pageCharacterList = []
+    for character in characterList:
+        pageCharacterList.append(character)
+    for j in words:
+        for k in pageCharacterList:
+            if k in j:
+                print(k)
+                pageCharacterList.remove(k)
+
 # closing the pdf file object
 pdfFileObj.close()
