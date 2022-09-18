@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Sinan's Fantastic Automagical Mixing Machine</h1>
+
+    <form method='POST' enctype='multipart/form-data'>
+        <p>Upload your script here:</p>
+        {{form.hidden_tag()}}
+        {{form.file()}}
+        <p>Enter the name of the characters in all CAPITAL LETTERS you'd like to be mic'ed, separated by commas.</p>
+        <p>When you're finished, hit submit!</p>
+        <p><input type='text' name='cl' /></p>
+        <p><input type='submit' value='Submit' /></p>
+    </form>
+</body>
+</html>
